@@ -7,16 +7,28 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Post;
+
 class PostsController extends Controller
 {
+    protected $posts;
+
+    public function __construct(Post $post)
+    {
+        //$this->post = $post;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function getIndex()
     {
-        //
+        $posts = Post::all();
+        //return $posts;
+        return view('posts.index')->with(compact('posts'));
+
     }
 
     /**

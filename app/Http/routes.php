@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //会員登録後にTopページヘ飛ばす
-Route::controller('home', 'PostsController');
+//Route::get('home', 'PostsController@getIndex');
+Route::controller('posts', 'PostsController');
 
 // 認証ルート…
 Route::get('auth/login', 'Auth\AuthController@getLogin');
