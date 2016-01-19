@@ -17,6 +17,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
+	
 	<style>
 		body {
 			font-family: 'Raleway';
@@ -63,7 +64,7 @@
 						<span class="icon-bar"></span>
 					</button>
 
-					<a class="navbar-brand" href="/">CodeReview広場</a>
+					<a class="navbar-brand" href="/codereview/public/posts">CodeReview広場</a>
 				</div>
 
 				<div id="navbar" class="navbar-collapse collapse">
@@ -73,11 +74,11 @@
 
 					<ul class="nav navbar-nav navbar-right">
 						@if (Auth::guest())
-							<li><a href="/CodeReview_System/public/auth/register"><i class="fa fa-btn fa-heart"></i>Register</a></li>
-							<li><a href="/CodeReview_System/public/auth/login"><i class="fa fa-btn fa-sign-in"></i>Login</a></li>
+							<li><a href="/codereview/public/auth/register"><i class="fa fa-btn fa-heart"></i>Register</a></li>
+							<li><a href="/codereview/public/auth/login"><i class="fa fa-btn fa-sign-in"></i>Login</a></li>
 						@else
 							<li class="navbar-text"><i class="fa fa-btn fa-user"></i>{{ Auth::user()->name }}</li>
-							<li><a href="/CodeReview_System/public/auth/logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+							<li><a href="/codereview/public/auth/logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 						@endif
 					</ul>
 				</div>

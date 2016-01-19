@@ -20,7 +20,7 @@
 Route::get('/', 'PostsController@getIndex');
 Route::get('/home', 'PostsController@getIndex');
 Route::controller('posts', 'PostsController');
-Route::controller('posts/create', 'PostsController');
+//Route::controller('posts/create', 'PostsController');
 
 
 // 認証ルート…
