@@ -43,12 +43,13 @@ class PostsController extends Controller
 
     public function postCreate(Request $request)
     {
-        //$data = $request->all();
-        //$this->post->fill($data);
-        //$this->post->save();
-        DB::table('posts')->insert(
-            ['title' => '困った', 'message' => '登録できない', 'code' =>'hogehoge']
-        );
+        $request->posts()->create([
+        'title' => $request->title,
+        'message' => $request->message,
+        'code' => $request->code,
+    ]);
+
+    return redirect('/posts');
     }
 
     /**
