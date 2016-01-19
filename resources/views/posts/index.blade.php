@@ -1,5 +1,5 @@
 @extends('layouts/app')
-  
+
   @section('content')
 
   <div class="container">
@@ -10,7 +10,7 @@
     <a href="posts/create">質問を投稿する</a>
     <h2 class="page-header">新着コード一覧</h2>
     @foreach($posts as $post)
-      <div class="card text-center col-sm-4">{{{ $post->title }}}</div>
+      <div class="card text-center col-sm-4"><a href="/CodeReview_System/public/posts/show/{{{ $post->id }}}">{{{ $post->title }}}</a></div>
     @endforeach
   </div>
 

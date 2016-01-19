@@ -72,9 +72,10 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function getShow($id)
     {
-        //
+        $post = $this->post->find($id);
+        return view('posts.show', compact('post'));
     }
 
     /**
