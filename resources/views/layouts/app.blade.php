@@ -29,7 +29,17 @@
 			padding-top: 6px;
 		}
 		.card{
-			background-color: #eee;
+			/*background-color: #eee;*/
+	    color: #fff;
+	    background: #f08080;
+	    padding: 20px;
+	    border: 1px dashed rgba(255,255,255,0.8);
+	    box-shadow: 0 0 0 5px #f08080;
+	    -moz-box-shadow: 0 0 0 5px #f08080;
+	    -webkit-box-shadow: 0 0 0 5px #f08080;
+		}
+		.center{
+		 text-align: center;
 		}
 
 	</style>
@@ -67,7 +77,7 @@
 							<li><a href="/auth/login"><i class="fa fa-btn fa-sign-in"></i>Login</a></li>
 						@else
 							<li class="navbar-text"><i class="fa fa-btn fa-user"></i>{{ Auth::user()->name }}</li>
-							<li><a href="/auth/logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+							<li><a href="codereview/public/auth/logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
 						@endif
 					</ul>
 				</div>

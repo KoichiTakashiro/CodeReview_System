@@ -15,7 +15,7 @@ class PostsController extends Controller
 
     public function __construct(Post $post)
     {
-        //$this->post = $post;
+        $this->post = $post;
     }
 
     /**
@@ -36,9 +36,19 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getCreate()
     {
-        //
+        return view('posts.create');
+    }
+
+    public function postCreate(Request $request)
+    {
+        //$data = $request->all();
+        //$this->post->fill($data);
+        //$this->post->save();
+        DB::table('posts')->insert(
+            ['title' => '困った', 'message' => '登録できない', 'code' =>'hogehoge']
+        );
     }
 
     /**

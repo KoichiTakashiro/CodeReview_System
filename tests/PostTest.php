@@ -9,7 +9,7 @@ class PostTest extends TestCase
     // アクセスした際の表示周りのテスト
     public function testAccess()
     {
-        $this->visit('/')
+        $this->visit('codereview/public/posts')
                ->see('会員登録') // app.blade.php(レイアウトファイル)が表示されているか
                ->see('新着コード') // index.blade.phpが表示されているか
                ->see('困った') // データベースに登録してあるデータが表示されているか
