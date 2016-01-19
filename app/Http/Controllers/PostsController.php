@@ -43,13 +43,16 @@ class PostsController extends Controller
 
     public function postCreate(Request $request)
     {
-        $request->posts()->create([
-        'title' => $request->title,
-        'message' => $request->message,
-        'code' => $request->code,
-    ]);
+        $data = $request->all();
+        return view('posts.check')->with(compact('data'));
+    }
 
-    return redirect('/posts');
+    public function postCheck(Request $request)
+    {
+        $data = $request->all();
+        $this->post->fill($data);
+        $this->post->save();
+        return redirect()->to('/posts');
     }
 
     /**
