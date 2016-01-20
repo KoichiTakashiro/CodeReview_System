@@ -8,14 +8,17 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\Post;
+use App\Comment;
 
 class PostsController extends Controller
 {
     protected $posts;
+    protected $comment;
 
-    public function __construct(Post $post)
+    public function __construct(Post $post, Comment $comment)
     {
         $this->post = $post;
+        $this->comment = $comment;
     }
 
     /**
@@ -26,7 +29,6 @@ class PostsController extends Controller
     public function getIndex()
     {
         $posts = Post::all();
-        //return $posts;
         return view('posts.index')->with(compact('posts'));
 
     }
@@ -75,7 +77,8 @@ class PostsController extends Controller
     public function getShow($id)
     {
         $post = $this->post->find($id);
-        return view('posts.show', compact('post'));
+        //$comment = $this->comment->get();
+        return view('posts.show', compact('post','comment'));
     }
 
     /**

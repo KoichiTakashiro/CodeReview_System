@@ -24,7 +24,16 @@
                 </tr>
                 </tbody>
             </table>
+            
+
+            <!-- コメント表示欄 -->
+            <h2 class="page-header">コメント</h2>
+            <div>
+                <p>ここにコメントが出る予定</p>
+            </div>
             <a href="../index">戻る</a>
         </div>
+
+
     </div>
 @endsection
