@@ -20,6 +20,7 @@
 Route::get('/', 'PostsController@getIndex');
 //Route::get('/home', 'PostsController@getIndex');
 Route::controller('posts', 'PostsController');
+Route::controller('comments', 'CommentsController');
 //Route::controller('posts/create', 'PostsController');
 
 

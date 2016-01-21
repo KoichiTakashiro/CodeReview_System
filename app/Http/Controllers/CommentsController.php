@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Comment;
 
 class CommentsController extends Controller
 {
@@ -14,6 +15,11 @@ class CommentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(Comment $comment)
+    {
+        $this->comment = $comment;
+    }
+
     public function index()
     {
         //
@@ -24,9 +30,12 @@ class CommentsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function postCreate(Request $request)
     {
-        //
+        $data = $request->all();
+        $this->comment->fill($data);
+        $this->comment->save();
+        return redirect()->to('/posts');
     }
 
     /**

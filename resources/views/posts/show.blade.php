@@ -33,6 +33,13 @@
                   <div class="text-center col-xs-12">{{{ $comment->comment }}}</div>
                 @endforeach
             </div>
+            <div class="">
+                <form action="../../comments/create" method="post" accept-charset="utf-8">
+                    {{ csrf_field() }}
+                    <textarea name="comment" placeholder="コメントする" class="form-control require"></textarea><br>
+                    <input type="submit" value="送信する"></input>
+                </form>
+            </div>
             <a href="../index">戻る</a>
         </div>
 
