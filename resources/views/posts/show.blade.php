@@ -24,12 +24,14 @@
                 </tr>
                 </tbody>
             </table>
-            
+
 
             <!-- コメント表示欄 -->
             <h2 class="page-header">コメント</h2>
             <div>
-                <p>ここにコメントが出る予定</p>
+                @foreach($comments as $comment)
+                  <div class="text-center col-xs-12">{{{ $comment->comment }}}</div>
+                @endforeach
             </div>
             <a href="../index">戻る</a>
         </div>

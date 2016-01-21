@@ -27,10 +27,10 @@ class CommentsTableSeeder extends Seeder
                 'updated_at' => '2015-01-31 23:59:59',
             ],
             [
-		            'comment'  => 'echo がないので出力されていません',
-		            'member_id' => '1',
-		            'created_at' => '2015-01-31 23:59:59',
-		            'updated_at' => '2015-01-31 23:59:59',            ],
+                'comment'  => 'echo がないので出力されていません',
+                'member_id' => '1',
+                'created_at' => '2015-01-31 23:59:59',
+                'updated_at' => '2015-01-31 23:59:59',            ],
         ]);
     }
 }

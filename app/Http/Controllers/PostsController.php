@@ -13,7 +13,7 @@ use App\Comment;
 class PostsController extends Controller
 {
     protected $posts;
-    protected $comment;
+    protected $comments;
 
     public function __construct(Post $post, Comment $comment)
     {
@@ -77,8 +77,9 @@ class PostsController extends Controller
     public function getShow($id)
     {
         $post = $this->post->find($id);
-        //$comment = $this->comment->get();
-        return view('posts.show', compact('post','comment'));
+        $comments = $this->comment->all();
+        return view('posts.show', compact('post','comments'));
+
     }
 
     /**
