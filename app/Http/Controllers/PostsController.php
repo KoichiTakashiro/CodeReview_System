@@ -76,8 +76,8 @@ class PostsController extends Controller
      */
     public function getShow($id)
     {
-        $post = $this->post->find($id);
-        $comments = $this->comment->all();
+        $post = $this->post->leftjoin('users', 'users.id', '=', 'posts.member_id')->find($id);
+        $comments = $this->comment->where('reply_post_id',$id)->get();
         return view('posts.show', compact('post','comments'));
 
     }

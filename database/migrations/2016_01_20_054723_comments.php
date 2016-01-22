@@ -16,6 +16,7 @@ class Comments extends Migration
             $table->increments('id');
             $table->text('comment');
             $table->integer('member_id');
+            $table->integer('reply_post_id');
             $table->timestamps();
         });
     }

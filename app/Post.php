@@ -18,7 +18,7 @@ class Post extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'message', 'code'];
+    protected $fillable = ['title', 'message', 'code', 'member_id'];
 
 
 }

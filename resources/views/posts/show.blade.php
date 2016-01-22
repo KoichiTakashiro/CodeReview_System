@@ -15,6 +15,10 @@
                     <td>{{{ $post->title }}}</td>
                 </tr>
                 <tr>
+                    <th>投稿者</th>
+                    <td>{{{ $post->name }}}</td>
+                </tr>
+                <tr>
                     <th>本文</th>
                     <td>{{{ $post->message }}}</td>
                 </tr>
@@ -37,6 +41,7 @@
                 <form action="../../comments/create" method="post" accept-charset="utf-8">
                     {{ csrf_field() }}
                     <textarea name="comment" placeholder="コメントする" class="form-control require"></textarea><br>
+                    <input type="hidden" name="reply_post_id" value="<?php echo $post->id; ?>">
                     <input type="submit" value="送信する"></input>
                 </form>
             </div>
