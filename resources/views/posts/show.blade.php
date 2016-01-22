@@ -16,7 +16,11 @@
                 </tr>
                 <tr>
                     <th>投稿者</th>
+                    @if (empty($post->name))
+                    <td>ゲストユーザー</td>
+                    @else
                     <td>{{{ $post->name }}}</td>
+                    @endif
                 </tr>
                 <tr>
                     <th>本文</th>

@@ -6,7 +6,9 @@
       <input type="hidden" name="title" value="{{{$data['title']}}}">
       <input type="hidden" name="message" value="{{{$data['message']}}}">
       <input type="hidden" name="code" value="{{{$data['code']}}}">
+      @if (Auth::check())
       <input type="hidden" name="member_id" value="{{{Auth::user()->id}}}">
+      @endif
       {{ csrf_field() }}
       <div class="row">
         <p>タイトル：</p>
