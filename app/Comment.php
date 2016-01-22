@@ -4,21 +4,19 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Post extends Model
+class Comment extends Model
 {
     /**
      * The table associated with the model.
      *
      * @var string
      */
-    protected $table = 'posts';
+    protected $table = 'comments';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['title', 'message', 'code', 'member_id'];
-
-
+    protected $fillable = ['comment','reply_post_id'];
 }

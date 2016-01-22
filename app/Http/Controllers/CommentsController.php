@@ -6,31 +6,23 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-use App\Post;
 use App\Comment;
 
-class PostsController extends Controller
+class CommentsController extends Controller
 {
-    protected $posts;
-    protected $comments;
-
-    public function __construct(Post $post, Comment $comment)
-    {
-        $this->post = $post;
-        $this->comment = $comment;
-    }
-
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function getIndex()
+    public function __construct(Comment $comment)
     {
-        $posts = Post::all();
-        return view('posts.index')->with(compact('posts'));
+        $this->comment = $comment;
+    }
 
+    public function index()
+    {
+        //
     }
 
     /**
@@ -38,22 +30,11 @@ class PostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getCreate()
-    {
-        return view('posts.create');
-    }
-
     public function postCreate(Request $request)
     {
         $data = $request->all();
-        return view('posts.check')->with(compact('data'));
-    }
-
-    public function postCheck(Request $request)
-    {
-        $data = $request->all();
-        $this->post->fill($data);
-        $this->post->save();
+        $this->comment->fill($data);
+        $this->comment->save();
         return redirect()->to('/posts');
     }
 
@@ -74,12 +55,9 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function getShow($id)
+    public function show($id)
     {
-        $post = $this->post->leftjoin('users', 'users.id', '=', 'posts.member_id')->find($id);
-        $comments = $this->comment->where('reply_post_id',$id)->get();
-        return view('posts.show', compact('post','comments'));
-
+        //
     }
 
     /**

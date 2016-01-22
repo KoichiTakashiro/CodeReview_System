@@ -16,8 +16,13 @@
 // });
 
 //会員登録後にTopページヘ飛ばす
-//Route::get('home', 'PostsController@getIndex');
+// Route::get('home', 'PostsController@getIndex');
+Route::get('/', 'PostsController@getIndex');
+//Route::get('/home', 'PostsController@getIndex');
 Route::controller('posts', 'PostsController');
+Route::controller('comments', 'CommentsController');
+//Route::controller('posts/create', 'PostsController');
+
 
 // 認証ルート…
 Route::get('auth/login', 'Auth\AuthController@getLogin');
